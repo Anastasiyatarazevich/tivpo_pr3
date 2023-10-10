@@ -26,7 +26,21 @@ public class Converter {
                 unit = scanner.nextInt();
                 System.out.println("Ответ: " + si(unit, value.doubleValue()) + " м.");
                 break;
-
+            case 3:
+                System.out.println("1. Вершок\n" +
+                        "2. Пядь\n" +
+                        "3. Локоть\n" +
+                        "4. Косая сажень\n" +
+                        "5. Маховая сажень\n" +
+                        "6. Фут\n" +
+                        "7. Дюйм\n" +
+                        "8. Сажень\n" +
+                        "9. Ярд\n" +
+                        "10. Верста\n" +
+                        "11. Аршин");
+                unit = scanner.nextInt();
+                System.out.println("Ответ: " + oldRussian(unit, value));
+                break;
             default:
                 System.out.println("Неверное значение");
         }
@@ -46,5 +60,48 @@ public class Converter {
                 break;
         }
         return answer;
+    }
+
+    public static BigDecimal oldRussian(int unit, BigDecimal value){
+        BigDecimal ans = BigDecimal.valueOf(0.0);
+        switch (unit){
+            case 1:
+                ans = BigDecimal.valueOf(0.0445).multiply(value);
+                break;
+            case 2:
+                ans = BigDecimal.valueOf(0.0445 * 4).multiply(value);
+                break;
+            case 3:
+                ans = BigDecimal.valueOf(0.45).multiply(value);
+                break;
+            case 4:
+                ans = BigDecimal.valueOf(2.48).multiply(value);
+                break;
+            case 5:
+                ans = BigDecimal.valueOf(1.76).multiply(value);
+                break;
+            case 6:
+                ans = BigDecimal.valueOf(0.31).multiply(value);
+                break;
+            case 7:
+                ans = BigDecimal.valueOf(0.025).multiply(value);
+                break;
+            case 8:
+                ans = BigDecimal.valueOf(2.13).multiply(value);
+                break;
+            case 9:
+                ans = BigDecimal.valueOf(0.91).multiply(value);
+                break;
+            case 10:
+                ans = BigDecimal.valueOf(1067).multiply(value);
+                break;
+            case 11:
+                ans = BigDecimal.valueOf(0.71).multiply(value);
+                break;
+            default:
+                System.out.println("Неверные данные");
+                return BigDecimal.valueOf(0);
+        }
+        return ans;
     }
 }
