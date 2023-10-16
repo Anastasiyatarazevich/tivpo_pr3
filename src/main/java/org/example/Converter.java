@@ -32,19 +32,20 @@ public class Converter {
         }
     }
 
-    public static double si(int unit, double value){
+    public static double si(int unit, double value) {
         double answer = 0;
-        switch (unit){
+        switch (unit) {
             case 1:
-                answer = value/100;
+                answer = value / 100;
                 break;
             case 2:
-                answer = value/10;
+                answer = value / 10;
                 break;
             case 3:
-                answer = value*1000;
+                answer = value * 1000;
                 break;
         }
         return answer;
     }
+
 }
