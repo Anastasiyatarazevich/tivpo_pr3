@@ -41,6 +41,15 @@ public class Converter {
                 unit = scanner.nextInt();
                 System.out.println("Ответ: " + oldRussian(unit, value));
                 break;
+            case 4:
+                System.out.println("1. Палец\n" +
+                        "2. Фут\n" +
+                        "3. Пальм\n" +
+                        "4. Акт\n" +
+                        "5. Локоть");
+                unit = scanner.nextInt();
+                System.out.println("Ответ: " + roman(unit, value.doubleValue()) + " м.");
+                break;
             default:
                 System.out.println("Неверное значение");
         }
@@ -103,5 +112,29 @@ public class Converter {
                 return BigDecimal.valueOf(0);
         }
         return ans;
+    }
+    public static double roman(int unit, double value) {
+        double answer = 0;
+        switch (unit) {
+            case 1:
+                answer = value / 100 * 1.85;
+                break;
+            case 2:
+                answer = value / 100 * 29.57;
+                break;
+            case 3:
+                answer = value / 100 * 7.39;
+                break;
+            case 4:
+                answer = value *35.5;
+                break;
+            case 5:
+                answer = value / 100 * 44.4;
+                break;
+            default:
+                System.out.println("Неверные данные");
+                return 0;
+        }
+        return answer;
     }
 }
