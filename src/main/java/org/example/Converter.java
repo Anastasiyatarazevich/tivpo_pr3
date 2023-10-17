@@ -26,6 +26,14 @@ public class Converter {
                 unit = scanner.nextInt();
                 System.out.println("Ответ: " + si(unit, value.doubleValue()) + " м.");
                 break;
+            case 2:
+                System.out.println("1. Дюйм\n" +
+                        "2. Фут\n" +
+                        "3. Ярд\n" +
+                        "4. Миля");
+                unit = scanner.nextInt();
+                System.out.println("Ответ: " + english(unit, value.doubleValue()));
+                break;
             case 3:
                 System.out.println("1. Вершок\n" +
                         "2. Пядь\n" +
