@@ -137,4 +137,26 @@ public class Converter {
         }
         return answer;
     }
+
+    public static double english(int unit, double value) {
+        double answer = 0;
+        switch (unit) {
+            case 1:
+                answer = value / 100 * 2.5;
+                break;
+            case 2:
+                answer = value / 100 * 30.5;
+                break;
+            case 3:
+                answer = value * 0.9;
+                break;
+            case 4:
+                answer = value * 1600;
+                break;
+            default:
+                System.out.println("Неверные данные");
+                return 0;
+        }
+        return answer;
+    }
 }
